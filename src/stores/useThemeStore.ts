@@ -9,7 +9,7 @@ type State = {
 };
 
 export const useThemeStore = create<State>((set) => ({
-  theme: darkTheme,
+  theme: { ...darkTheme },
   setTheme: (newTheme: ThemeColorsType) => set({ theme: newTheme }),
   resetTheme: () => set({ theme: darkTheme }),
 }));
