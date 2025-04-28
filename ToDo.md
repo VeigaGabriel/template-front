@@ -1,1 +1,1 @@
-[ ] Add tailwind.config.ts
+[x] Add tailwind.config.ts
