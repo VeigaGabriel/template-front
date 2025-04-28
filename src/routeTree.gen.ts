@@ -10,10 +10,10 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as ThemeConfigImport } from './routes/themeConfig'
-import { Route as AboutImport } from './routes/about'
-import { Route as IndexImport } from './routes/index'
+import { Route as rootRoute } from './routes/__root';
+import { Route as ThemeConfigImport } from './routes/themeConfig';
+import { Route as AboutImport } from './routes/about';
+import { Route as IndexImport } from './routes/index';
 
 // Create/Update Routes
 
@@ -21,93 +21,93 @@ const ThemeConfigRoute = ThemeConfigImport.update({
   id: '/themeConfig',
   path: '/themeConfig',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AboutRoute = AboutImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
     '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/about';
+      path: '/about';
+      fullPath: '/about';
+      preLoaderRoute: typeof AboutImport;
+      parentRoute: typeof rootRoute;
+    };
     '/themeConfig': {
-      id: '/themeConfig'
-      path: '/themeConfig'
-      fullPath: '/themeConfig'
-      preLoaderRoute: typeof ThemeConfigImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/themeConfig';
+      path: '/themeConfig';
+      fullPath: '/themeConfig';
+      preLoaderRoute: typeof ThemeConfigImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/themeConfig': typeof ThemeConfigRoute
+  '/': typeof IndexRoute;
+  '/about': typeof AboutRoute;
+  '/themeConfig': typeof ThemeConfigRoute;
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/themeConfig': typeof ThemeConfigRoute
+  '/': typeof IndexRoute;
+  '/about': typeof AboutRoute;
+  '/themeConfig': typeof ThemeConfigRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/themeConfig': typeof ThemeConfigRoute
+  __root__: typeof rootRoute;
+  '/': typeof IndexRoute;
+  '/about': typeof AboutRoute;
+  '/themeConfig': typeof ThemeConfigRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/themeConfig'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/themeConfig'
-  id: '__root__' | '/' | '/about' | '/themeConfig'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: '/' | '/about' | '/themeConfig';
+  fileRoutesByTo: FileRoutesByTo;
+  to: '/' | '/about' | '/themeConfig';
+  id: '__root__' | '/' | '/about' | '/themeConfig';
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ThemeConfigRoute: typeof ThemeConfigRoute
+  IndexRoute: typeof IndexRoute;
+  AboutRoute: typeof AboutRoute;
+  ThemeConfigRoute: typeof ThemeConfigRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ThemeConfigRoute: ThemeConfigRoute,
-}
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {

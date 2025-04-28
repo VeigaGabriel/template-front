@@ -1,4 +1,4 @@
-import { ThemeColorsType } from "@/types/theme";
+import { ThemeColorsType } from '@/types/theme';
 
 export const darkTheme: ThemeColorsType = {
   background: 'oklch(0.145 0 0)',

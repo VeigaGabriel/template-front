@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function ThemeConfig() {
   return (
@@ -9,6 +9,5 @@ export default function ThemeConfig() {
         <button>Save Changes</button>
       </div>
     </section>
-  )
+  );
 }
-

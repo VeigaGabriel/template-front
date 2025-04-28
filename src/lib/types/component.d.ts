@@ -1,19 +1,13 @@
-import type { LucideIcon } from "lucide-react";
-import type { JSX } from "react";
-import type { ComponentBadgeList } from "../badges.const";
+import type { LucideIcon } from 'lucide-react';
+import type { JSX } from 'react';
+import type { ComponentBadgeList } from '../badges.const';
 export type Variant = `variant${number}`;
 
-export type ComponentBadgeSlug = (typeof ComponentBadgeList)[number]["slug"];
+export type ComponentBadgeSlug = (typeof ComponentBadgeList)[number]['slug'];
 
-export type FrameworkBadge =
-  | "react"
-  | "vue"
-  | "svelte"
-  | "angular"
-  | "web-components"
-  | "next";
+export type FrameworkBadge = 'react' | 'vue' | 'svelte' | 'angular' | 'web-components' | 'next';
 
-export type ComponentHeightType = "xs" | "sm" | "md" | "lg" | "xl";
+export type ComponentHeightType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 /*
 ------------------------------------
