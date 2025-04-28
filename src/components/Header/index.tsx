@@ -25,22 +25,27 @@ export default function Header() {
     <>
       <div
         className={cn(['flex', 'h-18', 'items-center', 'gap-2'])}
-        style={{ backgroundColor: theme.popover }}
+        style={{ backgroundColor: theme.card }}
       >
         {routesList.map(({ link, name }) => (
-          <>
+          <div
+            className="flex flex-row h-full items-center gap-2"
+            key={link}
+          >
             <Link
-              key={link}
               to={link}
-              style={{ color: theme.popoverForeground }}
+              style={{ color: theme.primary }}
             >
               {name}
             </Link>
-            <Separator orientation="vertical" />
-          </>
+            <Separator
+              orientation="vertical"
+              style={{ backgroundColor: theme.primary }}
+            />
+          </div>
         ))}
       </div>
-      <Separator />
+      <Separator style={{ backgroundColor: theme.primary }} />
     </>
   );
 }

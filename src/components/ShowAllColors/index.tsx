@@ -14,7 +14,7 @@ export default function ShowAllColors() {
           key={key}
           className="h-20 w-20 flex flex-col items-center"
         >
-          <small style={{ color: theme.cardForeground }}>{key}</small>
+          <small style={{ color: theme.foreground }}>{key}</small>
           {/* <h3 className='text-white'>{theme[key]}</h3> */}
           <div
             style={{ backgroundColor: theme[key as keyof typeof theme] }}
