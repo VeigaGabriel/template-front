@@ -1,22 +1,23 @@
 import { ThemeColorsType } from '@/types/theme';
 
 export const darkTheme: ThemeColorsType = {
-  background: '#0a0a0a',
-  foreground: '#fafafa',
-  card: '#171717',
-  primary: '#e5e5e5',
-  secondary: '#262626',
-  mutedForeground: '#a1a1a1',
-  destructive: '#ff6467',
-  border: '#2e2e2e',
-  input: '#3a3a3a',
-  ring: '#737373',
-  chart1: '#1447e6',
-  chart2: '#00bc7d',
-  chart3: '#fe9a00',
-  chart4: '#ad46ff',
-  chart5: '#ff2056',
+  background: 'hsl(0, 0%, 3.92%)',
+  foreground: 'hsl(0, 0%, 98.04%)',
+  card: 'hsl(0, 0%, 9.02%)',
+  primary: 'hsl(0, 0%, 89.8%)',
+  secondary: 'hsl(0, 0%, 14.9%)',
+  mutedForeground: 'hsl(0, 0%, 63.14%)',
+  destructive: 'hsl(358.84, 100%, 69.61%)',
+  border: 'hsl(0, 0%, 18.04%)',
+  input: 'hsl(0, 0%, 22.75%)',
+  ring: 'hsl(0, 0%, 45.1%)',
+  chart1: 'hsl(225.43, 84%, 49.02%)',
+  chart2: 'hsl(159.89, 100%, 36.86%)',
+  chart3: 'hsl(36.38, 100%, 49.8%)',
+  chart4: 'hsl(273.41, 100%, 63.73%)',
+  chart5: 'hsl(345.47, 100%, 56.27%)',
 };
+
 // export const darkTheme: ThemeColorsType = {
 //   background: 'oklch(0.145 0 0)',
 //   foreground: 'oklch(0.985 0 0)',

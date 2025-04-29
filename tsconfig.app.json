@@ -33,6 +33,6 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "exclude": ["src/cuicui"]
+  // "exclude": ["src/cuicui"]
 
 }
