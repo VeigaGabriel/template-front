@@ -1,6 +1,4 @@
-import { ShowAllColors } from '@/components';
 import ChangeColor from '@/components/ChangeColor/change-color';
-import { useState } from 'react';
 
 export default function ThemeConfigPage() {
   return (

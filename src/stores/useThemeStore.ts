@@ -1,4 +1,4 @@
-import { ThemeColorsType } from '@/types/theme';
+import { ThemeColorsType } from '@/types/theme.type';
 import { darkTheme } from '@/utils/defaultThemes';
 import { create } from 'zustand';
 

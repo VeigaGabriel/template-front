@@ -1,4 +1,4 @@
-import { ShowAllColors } from '@/components';
+import ShowAllColors from '@/components/ShowAllColors';
 import { useThemeStore } from '@/stores/useThemeStore';
 import { Button } from '@/ui/button';
 

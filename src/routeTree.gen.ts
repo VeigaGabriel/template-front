@@ -10,104 +10,123 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root';
-import { Route as ThemeConfigImport } from './routes/themeConfig';
-import { Route as AboutImport } from './routes/about';
-import { Route as IndexImport } from './routes/index';
+import { Route as rootRoute } from './routes/__root'
+import { Route as ThemeConfigRouteImport } from './routes/theme-config.route'
+import { Route as HomeRouteImport } from './routes/home.route'
+import { Route as AboutRouteImport } from './routes/about.route'
+import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const ThemeConfigRoute = ThemeConfigImport.update({
-  id: '/themeConfig',
-  path: '/themeConfig',
+const ThemeConfigRouteRoute = ThemeConfigRouteImport.update({
+  id: '/theme-config',
+  path: '/theme-config',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
-const AboutRoute = AboutImport.update({
+const HomeRouteRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AboutRouteRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
     '/about': {
-      id: '/about';
-      path: '/about';
-      fullPath: '/about';
-      preLoaderRoute: typeof AboutImport;
-      parentRoute: typeof rootRoute;
-    };
-    '/themeConfig': {
-      id: '/themeConfig';
-      path: '/themeConfig';
-      fullPath: '/themeConfig';
-      preLoaderRoute: typeof ThemeConfigImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/theme-config': {
+      id: '/theme-config'
+      path: '/theme-config'
+      fullPath: '/theme-config'
+      preLoaderRoute: typeof ThemeConfigRouteImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
-  '/about': typeof AboutRoute;
-  '/themeConfig': typeof ThemeConfigRoute;
+  '/': typeof IndexRoute
+  '/about': typeof AboutRouteRoute
+  '/home': typeof HomeRouteRoute
+  '/theme-config': typeof ThemeConfigRouteRoute
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
-  '/about': typeof AboutRoute;
-  '/themeConfig': typeof ThemeConfigRoute;
+  '/': typeof IndexRoute
+  '/about': typeof AboutRouteRoute
+  '/home': typeof HomeRouteRoute
+  '/theme-config': typeof ThemeConfigRouteRoute
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  '/': typeof IndexRoute;
-  '/about': typeof AboutRoute;
-  '/themeConfig': typeof ThemeConfigRoute;
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRouteRoute
+  '/home': typeof HomeRouteRoute
+  '/theme-config': typeof ThemeConfigRouteRoute
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/about' | '/themeConfig';
-  fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/about' | '/themeConfig';
-  id: '__root__' | '/' | '/about' | '/themeConfig';
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/about' | '/home' | '/theme-config'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/about' | '/home' | '/theme-config'
+  id: '__root__' | '/' | '/about' | '/home' | '/theme-config'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  AboutRoute: typeof AboutRoute;
-  ThemeConfigRoute: typeof ThemeConfigRoute;
+  IndexRoute: typeof IndexRoute
+  AboutRouteRoute: typeof AboutRouteRoute
+  HomeRouteRoute: typeof HomeRouteRoute
+  ThemeConfigRouteRoute: typeof ThemeConfigRouteRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ThemeConfigRoute: ThemeConfigRoute,
-};
+  AboutRouteRoute: AboutRouteRoute,
+  HomeRouteRoute: HomeRouteRoute,
+  ThemeConfigRouteRoute: ThemeConfigRouteRoute,
+}
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
 /* ROUTE_MANIFEST_START
 {
@@ -117,17 +136,21 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
-        "/themeConfig"
+        "/home",
+        "/theme-config"
       ]
     },
     "/": {
-      "filePath": "index.tsx"
+      "filePath": "index.ts"
     },
     "/about": {
-      "filePath": "about.tsx"
+      "filePath": "about.route.tsx"
     },
-    "/themeConfig": {
-      "filePath": "themeConfig.tsx"
+    "/home": {
+      "filePath": "home.route.tsx"
+    },
+    "/theme-config": {
+      "filePath": "theme-config.route.tsx"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { ThemeColorsType } from '@/types/theme';
+import { ThemeColorsType } from '@/types/theme.type';
 
 export const darkTheme: ThemeColorsType = {
   background: 'hsl(0, 0%, 3.92%)',

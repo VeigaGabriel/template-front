@@ -1,13 +1,6 @@
-import { Base, Header } from '@/components';
 import { createRootRoute, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import type { FunctionComponent } from '../types/react.type';
 
-export const Route = createRootRoute({
-  component: () => (
-    <Base>
-      <Header />
-      <Outlet />
-      <TanStackRouterDevtools />
-    </Base>
-  ),
+export const rootRoute = createRootRoute({
+  component: (): FunctionComponent => <Outlet />,
 });

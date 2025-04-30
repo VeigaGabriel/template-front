@@ -1,8 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import {} from 'lucide-react';
 import { cn } from '@/utils/tailwind';
-import { StaticNoise } from '@/cuicui/other/creative-effects/animated-noise/static-noise';
-import { DotsPattern } from '@/cuicui/other/patterns/dots-pattern/dots-pattern';
+import { } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 type Color = { value: string; gradient?: boolean };
 
@@ -135,7 +133,7 @@ export const ArcColorPicker = ({
           }}
         />
 
-        <DotsPattern
+        {/* <DotsPattern
           className="absolute inset-0 fill-neutral-400/20"
           width={8}
           height={8}
@@ -144,7 +142,7 @@ export const ArcColorPicker = ({
           opacity={grainIntensity / 100 / 2}
           backgroundSize="200px"
           className="inset-0 absolute mix-blend-screen dark:mix-blend-multiply z-20"
-        />
+        /> */}
         <div
           className="absolute w-4 h-4 border-2 border-white dark:border-black rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2"
           style={{ left: `${(hue / 360) * 100}%`, top: `${100 - opacity}%` }}
@@ -176,11 +174,11 @@ export const PreviewColor = ({
           className="size-full opacity-50 z-10"
           style={{ background: selectedColor }}
         />
-        <StaticNoise
+        {/* <StaticNoise
           opacity={intensity / 100}
           backgroundSize="150px"
           className="inset-0 absolute mix-blend-screen dark:mix-blend-multiply z-20"
-        />
+        /> */}
       </div>
     </div>
   );
