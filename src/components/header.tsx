@@ -1,10 +1,8 @@
 import { useThemeStore } from '@/stores/useThemeStore';
 import { Avatar, AvatarFallback, AvatarImage } from '@/ui/avatar';
 import { Separator } from '@/ui/separator';
-import { SidebarProvider, SidebarTrigger } from '@/ui/sidebar';
 import { cn } from '@/utils/tailwind';
 import { Link } from '@tanstack/react-router';
-import Sidebar from './sidebar';
 
 export default function Header() {
   const { theme } = useThemeStore();
@@ -19,13 +17,13 @@ export default function Header() {
       name: 'About',
     },
     {
-      link: '/themeConfig',
+      link: '/theme-config',
       name: 'Theme Config',
     },
   ];
 
   return (
-    <header>
+    <header className="z-10">
       <div>
         <div
           className={cn(['flex', 'h-18', 'items-center', 'justify-end', 'gap-2', 'p-4'])}
