@@ -8,9 +8,5 @@ import { rootRoute } from './__root';
 export const HomeRoute = createRoute({
   getParentRoute: (): typeof rootRoute => rootRoute,
   path: ROUTES.HOME,
-  component: (): FunctionComponent => (
-    <Base>
-      <Home />
-    </Base>
-  ),
+  component: (): FunctionComponent => <Home />,
 });
