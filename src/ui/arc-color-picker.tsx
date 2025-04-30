@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import {} from 'lucide-react';
-import { cn } from '@/cuicui/utils/cn';
+import { cn } from '@/utils/tailwind';
 import { StaticNoise } from '@/cuicui/other/creative-effects/animated-noise/static-noise';
 import { DotsPattern } from '@/cuicui/other/patterns/dots-pattern/dots-pattern';
 

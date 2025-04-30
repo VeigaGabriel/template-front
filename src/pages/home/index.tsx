@@ -1,7 +1,6 @@
 import { ShowAllColors } from '@/components';
-import { CircularBarsSpinnerLoader } from '@/cuicui/common-ui/loaders/spinner-loader/circular-bars-spinner-loader';
 import { useThemeStore } from '@/stores/useThemeStore';
-import { Button } from '@/ui/button';
+import { Button, Button } from '@/ui/button';
 
 export default function Home() {
   const { theme } = useThemeStore();
@@ -12,7 +11,6 @@ export default function Home() {
     >
       <h1>Custom Template</h1>
 
-      <CircularBarsSpinnerLoader />
       <Button>Button</Button>
       <Button variant="secondary">Secondary</Button>
       <Button variant="destructive">Destructive</Button>
