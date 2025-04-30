@@ -1,6 +1,6 @@
 import { ShowAllColors } from '@/components';
 import { useThemeStore } from '@/stores/useThemeStore';
-import { Button, Button } from '@/ui/button';
+import { Button } from '@/ui/button';
 
 export default function Home() {
   const { theme } = useThemeStore();
